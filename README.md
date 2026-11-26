@@ -27,9 +27,11 @@ Prototype personnel, non publié sur Google Play.
 - La reconnaissance Shazam et les paroles Kugou passent par des **API non officielles**, et LRCLIB
   est une base communautaire : réservé à un **usage personnel**.
 - Android Auto n'affiche une application construite avec la Car App Library que si elle vient
-  d'une source reconnue, comme Google Play. Pour un essai en voiture, installez-la depuis le
-  partage interne de Google Play, ou par ADB en déclarant le Play Store comme installateur :
-  `adb install -r -i com.android.vending app-release.apk`.
+  d'une source reconnue, comme Google Play. La voie officielle pour un essai en voiture est le
+  partage interne de Google Play. Le simulateur Android Auto (DHU) affiche l'application quelle
+  que soit son installation. En voiture, déclarer le Play Store comme installateur lors d'une
+  installation par ADB (`adb install -r -i com.android.vending app-release.apk`) est une piste
+  qui n'est pas encore confirmée.
 - L'écran voiture utilise la catégorie « navigation » pour dessiner librement : en l'état, ce
   choix ne passerait pas l'examen de Google Play.
 
