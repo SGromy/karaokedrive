@@ -12,8 +12,8 @@ Portage en Kotlin de l'algorithme de calcul d'empreinte de **shazamio**
 (https://github.com/dotX12/ShazamIO), distribué sous licence MIT, reproduite ci-dessous.
 
 L'algorithme d'origine provient de **SongRec** (https://github.com/marin-m/SongRec),
-distribué sous licence GPL-3.0. ⚠️ Avant toute diffusion de l'application, vérifier la
-compatibilité de licence (le portage suit le comportement de SongRec sur l'étalement temporel).
+distribué sous licence GPL-3.0. Le portage suit le comportement de SongRec sur l'étalement
+temporel : c'est pourquoi KaraokeDrive est lui-même distribué sous GPL-3.0 (voir `LICENSE`).
 
 L'API de reconnaissance de Shazam utilisée est **non officielle** : usage personnel uniquement.
 
