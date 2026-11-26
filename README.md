@@ -37,7 +37,9 @@ Prototype personnel, non publié sur Google Play.
 
 ## Compiler
 
-Prérequis : JDK 17 ou plus récent, et le SDK Android. Gradle télécharge lui-même la plate-forme
+Prérequis : JDK 17 ou plus récent, et le SDK Android. Indiquez son emplacement par la variable
+d'environnement `ANDROID_HOME`, ou par une ligne `sdk.dir=…` dans `local.properties` (Android Studio
+la crée tout seul). Une fois la licence du SDK acceptée, Gradle télécharge lui-même la plate-forme
 SDK manquante.
 
 ```bash

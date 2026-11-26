@@ -3,7 +3,8 @@
 ## Police Nunito (`app/src/main/res/font/nunito_semibold_italic.ttf`)
 
 Nunito, © The Nunito Project Authors (https://github.com/googlefonts/nunito),
-distribuée sous SIL Open Font License 1.1 (https://openfontlicense.org).
+distribuée sous SIL Open Font License 1.1 (https://openfontlicense.org) ; texte complet de la licence
+et avis de copyright dans `licenses/Nunito-OFL.txt`.
 Utilisée pour la traduction des paroles.
 
 ## Empreinte audio Shazam (`app/src/main/java/com/karaokedrive/recognition/shazam/`)

@@ -50,6 +50,11 @@ private val AI_TRANSLATION = BuildConfig.LLM_API_KEY.isNotBlank()
 
 private val CREDITS = listOf(
     Credit("Auteur", "$AUTHOR : idée, conception et développement de KaraokeDrive"),
+    Credit(
+        "Licence",
+        "© 2026 $AUTHOR. Logiciel libre sous licence GPL-3.0 : vous pouvez le redistribuer et le modifier " +
+            "selon ses termes. Fourni sans aucune garantie. Licence et code source : github.com/SGromy/karaokedrive",
+    ),
     Credit("Paroles synchronisées", "LRCLIB (lrclib.net), base communautaire et gratuite"),
     Credit("Timing mot par mot", "Kugou (API non officielle), format KRC documenté par Lyricify-Lyrics-Helper (Apache-2.0)"),
     Credit("Reconnaissance des morceaux", "Service Shazam (API non officielle), empreinte audio d'après SongRec (GPL-3.0) et shazamio (MIT) ; ACRCloud en secours"),
