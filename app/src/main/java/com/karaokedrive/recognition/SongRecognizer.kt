@@ -31,7 +31,7 @@ class FallbackRecognizer(
             return first
         }
         if (!fallback.isConfigured) return first ?: RecognitionResult.Failure("Aucun service de reconnaissance")
-        if (BuildConfig.DEBUG) Log.d("KaraokeDrive", "${primary.name} indisponible (${(first as? RecognitionResult.Failure)?.message}) → ${fallback.name}")
+        if (BuildConfig.DEBUG) Log.d("KaraokeDrive", "${primary.name} indisponible (${first?.message}) → ${fallback.name}")
         return fallback.identify(sample)
     }
 }

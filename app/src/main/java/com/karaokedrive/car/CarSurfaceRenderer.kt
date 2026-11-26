@@ -55,10 +55,14 @@ class CarSurfaceRenderer(logo: Bitmap?, translationTypeface: Typeface?) : Surfac
     }
 
     override fun doFrame(frameTimeNanos: Long) {
-        val target = surface?.takeIf { isRunning && it.isValid } ?: return
+        if (!isRunning) return
+        // Surface momentanément invalide : la boucle continue au ralenti au lieu de s'arrêter
+        // (sinon une nouvelle surface ne la relancerait jamais : isRunning resterait vrai)
+        val target = surface?.takeIf { it.isValid }
+        if (target == null) drawnState = null // tout redessiner quand elle revient
         val state = KaraokeController.state.value
-        val animated = RenderCadence.isAnimated(state)
-        if (animated || state !== drawnState || area != drawnArea) draw(target, state)
+        val animated = target != null && RenderCadence.isAnimated(state)
+        if (target != null && (animated || state !== drawnState || area != drawnArea)) draw(target, state)
         // Image fixe : on vérifie seulement de temps en temps si l'état a changé, sans dessiner
         if (animated) {
             Choreographer.getInstance().postFrameCallback(this)
