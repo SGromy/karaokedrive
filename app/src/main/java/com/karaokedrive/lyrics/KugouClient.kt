@@ -97,7 +97,7 @@ class KugouClient(private val http: OkHttpClient) {
 
     private suspend fun get(url: HttpUrl): String? {
         val request = Request.Builder().url(url).header("User-Agent", USER_AGENT).build()
-        return http.newCall(request).await().use { r -> if (r.isSuccessful) r.body?.string() else null }
+        return http.newCall(request).await().use { r -> if (r.isSuccessful) r.body.string() else null }
     }
 
     private companion object {

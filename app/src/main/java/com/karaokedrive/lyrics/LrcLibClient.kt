@@ -86,7 +86,7 @@ class LrcLibClient(private val http: OkHttpClient) {
         val request = Request.Builder().url(url).header("User-Agent", USER_AGENT).build()
         return http.newCall(request).await().use { r ->
             when {
-                r.isSuccessful -> r.body?.string()
+                r.isSuccessful -> r.body.string()
                 r.code == 429 || r.code >= 500 -> throw ServiceUnavailable(r.code)
                 else -> null // 404 : pas de paroles sous ce nom
             }

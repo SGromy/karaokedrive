@@ -34,7 +34,7 @@ class LlmTranslator(
         http.newCall(request).execute().use { response ->
             // Le message d'erreur du service n'est pas repris : il pourrait contenir des détails du compte
             if (!response.isSuccessful) throw IOException("service de traduction : HTTP ${response.code}")
-            val body = response.body?.string() ?: throw IOException("service de traduction : réponse vide")
+            val body = response.body.string()
             LlmTranslation.parseResponse(body, expectedCount = lines.size, original = lines)
         }
     }

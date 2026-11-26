@@ -33,7 +33,7 @@ class ShazamRecognizer(private val http: OkHttpClient) : SongRecognizer {
         try {
             withContext(Dispatchers.IO) {
                 http.newCall(buildRequest(signature)).execute().use { response ->
-                    val body = response.body?.string().orEmpty()
+                    val body = response.body.string()
                     if (!response.isSuccessful) RecognitionResult.Failure("Shazam HTTP ${response.code}")
                     else parse(body, signature.durationMs)
                 }

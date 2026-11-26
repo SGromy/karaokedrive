@@ -31,13 +31,13 @@ class CoverArtClient(private val http: OkHttpClient) {
             .addQueryParameter("limit", "1")
             .build()
         return http.newCall(Request.Builder().url(url).build()).execute().use { response ->
-            if (response.isSuccessful) parseDeezer(response.body?.string().orEmpty()) else null
+            if (response.isSuccessful) parseDeezer(response.body.string()) else null
         }
     }
 
     private fun download(url: String): Bitmap? =
         http.newCall(Request.Builder().url(url).build()).execute().use { response ->
-            val bytes = response.body?.bytes()?.takeIf { response.isSuccessful } ?: return null
+            val bytes = response.body.bytes().takeIf { response.isSuccessful } ?: return null
             val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
             BitmapFactory.decodeByteArray(bytes, 0, bytes.size, bounds)
             val options = BitmapFactory.Options().apply { inSampleSize = sampleSizeFor(bounds.outWidth) }

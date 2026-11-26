@@ -47,7 +47,7 @@ class AcrCloudRecognizer(
         if (!isConfigured) return@withContext RecognitionResult.Failure("Clés ACRCloud manquantes")
         try {
             http.newCall(buildRequest(sample)).execute().use { response ->
-                val body = response.body?.string().orEmpty()
+                val body = response.body.string()
                 if (BuildConfig.DEBUG) Log.d(TAG, "HTTP ${response.code} status=${statusOf(body)}")
                 if (!response.isSuccessful) RecognitionResult.Failure("ACRCloud HTTP ${response.code}")
                 else parse(body)
