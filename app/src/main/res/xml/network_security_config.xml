@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  HTTPS obligatoire partout, sauf pour le catalogue musical de Kugou : son certificat HTTPS
+  n'est pas valide. Il ne reçoit que le nom du morceau recherché (aucune donnée personnelle).
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false" />
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">mobilecdn.kugou.com</domain>
+    </domain-config>
+</network-security-config>

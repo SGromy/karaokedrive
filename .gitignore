@@ -1,0 +1,15 @@
+.gradle/
+.kotlin/
+build/
+local.properties
+.idea/
+*.iml
+.DS_Store
+captures/
+# Outils tiers, hors application
+skills/
+# Binaires et clés de signature (les APK embarquent les clés API)
+*.apk
+*.aab
+*.jks
+*.keystore

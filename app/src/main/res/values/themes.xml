@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.KaraokeDrive" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/stage</item>
+        <item name="android:statusBarColor">@color/stage</item>
+        <item name="android:navigationBarColor">@color/stage</item>
+    </style>
+</resources>

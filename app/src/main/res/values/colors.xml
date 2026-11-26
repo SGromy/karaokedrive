@@ -1,0 +1,5 @@
+<resources>
+    <color name="stage">#FF120B2E</color>
+    <!-- Nuit du logo, fond des icônes adaptatives -->
+    <color name="icon_background">#FF0B0620</color>
+</resources>
